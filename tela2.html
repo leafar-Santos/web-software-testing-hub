@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório Dinâmico</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+        }
+        .report-container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .step {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-left: 4px solid #007bff;
+            background-color: #e7f1ff;
+        }
+        .step.passed {
+            border-left-color: #28a745;
+            background-color: #d4edda;
+        }
+        .step.failed {
+            border-left-color: #dc3545;
+            background-color: #f8d7da;
+        }
+        .timestamp {
+            font-size: 0.9em;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="report-container">
+        <h1>Relatório de Testes</h1>
+        <div id="test-report"></div>
+    </div>
+
+    <script>
+        // Simulação dos dados do relatório
+        const reportData = {
+            start_timestamp: "2024-10-23T23:30:02.997Z",
+            scenario: {
+                name: "que a API nao esta acessivel sem um token",
+                description: "",
+                steps: [
+                    {
+                        keyword: "Given",
+                        name: "que a API nao esta acessivel sem um token",
+                        status: "passed",
+                        duration: 520892663
+                    },
+                    {
+                        keyword: "When",
+                        name: "eu enviar a requisicao sem token",
+                        status: "passed",
+                        duration: 1176922592
+                    },
+                    {
+                        keyword: "Then",
+                        name: "o resultado deve ser 401",
+                        status: "passed",
+                        duration: 2061444
+                    }
+                ]
+            }
+        };
+
+        // Função para formatar a data
+        function formatDate(timestamp) {
+            const date = new Date(timestamp);
+            return date.toLocaleString("pt-BR");
+        }
+
+        // Função para gerar o relatório HTML
+        function generateReport() {
+            const reportDiv = document.getElementById("test-report");
+
+            // Adiciona o timestamp
+            reportDiv.innerHTML += `<p class="timestamp">Início: ${formatDate(reportData.start_timestamp)}</p>`;
+            
+            // Adiciona o nome do cenário
+            reportDiv.innerHTML += `<h2>${reportData.scenario.name}</h2>`;
+            reportDiv.innerHTML += `<p>${reportData.scenario.description || "Sem descrição."}</p>`;
+            
+            // Adiciona os passos
+            reportData.scenario.steps.forEach(step => {
+                const stepClass = step.status === "passed" ? "passed" : "failed";
+                reportDiv.innerHTML += `
+                    <div class="step ${stepClass}">
+                        <strong>${step.keyword}</strong> ${step.name} - Status: ${step.status}
+                    </div>
+                `;
+            });
+        }
+
+        // Gera o relatório ao carregar a página
+        window.onload = generateReport;
+    </script>
+
+</body>
+</html>
+

@@ -1,0 +1,57 @@
+/* Estilos da Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Alinha os itens à esquerda e à direita */
+  align-items: center;
+  background-color:#405b75;
+  padding: 10px 20px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex; /* Deixa os links na horizontal */
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin-left: 20px;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 22px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: 0.3s ease, color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+/* Botão alinhado à direita */
+.right-button {
+  background-color:#47768d;
+  color: white;
+  padding: 10px 15px; /* Ajuste do padding para mais responsividade */
+  border: none;
+  border-radius: 5px;
+  font-size: 22px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin-left: 10px;
+  margin-right: 50px;
+  height: auto;
+  min-width: auto; 
+  max-width: auto;
+  flex: 1; 
+  box-sizing: border-box; 
+}
+
+.right-button:hover {
+  background-color:  #356479;
+  color: white;
+}

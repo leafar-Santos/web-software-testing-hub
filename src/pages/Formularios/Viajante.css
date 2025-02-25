@@ -1,0 +1,152 @@
+.container-viajante {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  display: flex;
+  justify-content: flex-start; 
+  flex-wrap: wrap; /* Permite que os itens quebrem a linha */
+  gap: 20px; /* Reduz o espaço entre os cards */
+  width: 80%;
+  margin-top: 10px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 50px;
+}
+.form-container-viajante {
+  flex: 1; 
+  background-color: #e4e5e6;
+  padding: 20px 50px 20px 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column; 
+  position: relative; 
+  margin-bottom: 0;
+  max-height: 43%;
+
+}
+
+.form-container-viajante h2 {
+  margin-bottom: 20px;
+  font-size: 28px; 
+  color: #007bff; 
+  text-align: center;
+  font-weight: bold; 
+  position: relative; 
+  
+}
+
+.form-container-viajante h2::after {
+  content: '';
+  display: block;
+  width: 50px; 
+  height: 4px; 
+  background-color: #007bff; 
+  margin: 10px auto; 
+  border-radius: 5px; 
+}
+
+.form-group {
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.form-group span {
+  font-size: 20px;
+  margin-bottom: 8px;
+  color: #555;
+  
+ 
+
+}
+.form-group select {
+  width: 100%;
+  padding: 14px; /* Aumenta o espaçamento */
+  font-size: 14px;
+  border: 1px solid #b3afaf;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1); 
+  margin-bottom: 15px;
+}
+
+.form-group input,
+.form-group textarea {
+  width:100%;
+  padding: 14px; /* Aumenta o espaçamento */
+  font-size: 14px;
+  border: 1px solid #b3afaf;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1); 
+  margin-bottom: 15px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); 
+}
+
+.form-group button {
+  width: auto; /* Altera a largura para auto */
+  padding: 14px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.form-group button:hover {
+  background-color: #0056b3;
+}
+
+.test-scenarios {
+  flex: 1;
+  background-color: #c7c2b4;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.test-scenarios h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #664f2d;
+  text-align: center;
+}
+
+/* Estilo de cada cenário de teste */
+.scenario {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease;
+}
+
+.scenario:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.scenario h3 {
+  font-size: 18px;
+  margin-bottom: 12px;
+  color: #17a2b8;
+}
+
+.step {
+  font-size: 14px;
+  margin-bottom: 6px;
+  padding-left: 10px;
+  border-left: 3px solid #007bff;
+  color: #555;
+}
+
+.step strong {
+  font-weight: bold; /* Negrito */
+}
+

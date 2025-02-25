@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exibir Dados dos Viajantes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .card-container {
+            display: flex;
+            flex-wrap: wrap; /* Permite que os cards sejam movidos para a linha seguinte se não houver espaço */
+            justify-content: space-between; /* Distribui os cards com espaço entre eles */
+        }
+        .card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            padding: 15px; /* Diminuído o padding */
+            margin: 10px; /* Diminuído o espaço entre os cards */
+            width: calc(30% - 20px); /* Define a largura dos cards e considera a margem */
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-2px);
+        }
+        .card h2 {
+            margin: 0 0 10px;
+            color: #333;
+            font-size: 1.2em; /* Diminuído o tamanho da fonte do título */
+        }
+        .card p {
+            margin: 5px 0;
+            color: #666;
+        }
+        .button-container {
+            display: flex;
+            justify-content: flex-start; /* Alinha os botões à esquerda */
+            margin-top: 10px; /* Diminuído o espaço acima dos botões */
+        }
+        .button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 8px 12px; /* Diminuído o padding dos botões */
+            cursor: pointer;
+            transition: background-color 0.2s;
+            margin-right: 5px; /* Espaçamento entre os botões */
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        .button.delete {
+            background-color: #dc3545;
+        }
+        .button.delete:hover {
+            background-color: #c82333;
+        }
+        /* Estilos para o Modal */
+        .modal {
+            display: none; /* Oculto por padrão */
+            position: fixed;
+            z-index: 1; /* Fica em cima dos outros elementos */
+            left: 0;
+            top: 0;
+            width: 100%; /* Largura total */
+            height: 100%; /* Altura total */
+            overflow: auto; /* Adiciona scroll se necessário */
+            background-color: rgb(0, 0, 0); /* Cor de fundo preta */
+            background-color: rgba(0, 0, 0, 0.4); /* Preto com opacidade */
+            padding-top: 100px; /* Espaço no topo */
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto; /* Margem superior e inferior */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; /* Largura do modal */
+            max-width: 400px; /* Largura máxima */
+            border-radius: 8px;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Dados dos Viajantes</h1>
+    <div id="cardContainer" class="card-container"></div>
+
+    <!-- Modal de Confirmação -->
+    <div id="confirmationModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <p>Tem certeza que deseja excluir este viajante?</p>
+            <button id="confirmDelete" class="button delete">Excluir</button>
+            <button id="cancelDelete" class="button">Cancelar</button>
+        </div>
+    </div>
+
+    <script>
+        let idToDelete = null; // Variável para armazenar o ID do viajante a ser excluído
+
+        async function fetchViajantes() {
+            try {
+                const response = await fetch('http://localhost:8080/viajante'); // Altere a URL conforme necessário
+                if (!response.ok) {
+                    throw new Error('Erro ao buscar dados: ' + response.statusText);
+                }
+                const viajantes = await response.json();
+                displayCards(viajantes);
+            } catch (error) {
+                console.error('Erro:', error);
+                document.getElementById('cardContainer').innerText = 'Erro ao carregar dados dos viajantes.';
+            }
+        }
+
+        function displayCards(viajantes) {
+            const cardContainer = document.getElementById('cardContainer');
+            cardContainer.innerHTML = ''; // Limpa o contêiner antes de adicionar novos cards
+
+            viajantes.forEach(viajante => {
+                const card = document.createElement('div');
+                card.className = 'card';
+
+                card.innerHTML = `
+                    <h2>${viajante.name}</h2>
+                    <p><strong>Email:</strong> ${viajante.email}</p>
+                    <p><strong>Telefone:</strong> ${viajante.phone}</p>
+                    <p><strong>Destino:</strong> ${viajante.destiny}</p>
+                    <p><strong>Razão da Viagem:</strong> ${viajante.reasonTravel}</p>
+                    <p><strong>Data da Viagem:</strong> ${viajante.travelDate}</p>
+                    <p><strong>Número de Pessoas:</strong> ${viajante.peopleNumber}</p>
+                    <p><strong>Observação:</strong> ${viajante.observation}</p>
+                    <div class="button-container">
+                        <button class="button" onclick="alterarViajante(${viajante.id})">Alterar</button>
+                        <button class="button delete" onclick="openConfirmationModal(${viajante.id})">Excluir</button>
+                    </div>
+                `;
+
+                cardContainer.appendChild(card);
+            });
+        }
+
+        function alterarViajante(id) {
+            // Adicione a lógica para alterar o viajante
+            console.log(`Alterar Viajante com ID: ${id}`);
+        }
+
+        function openConfirmationModal(id) {
+            idToDelete = id; // Armazena o ID do viajante a ser excluído
+            document.getElementById('confirmationModal').style.display = 'block'; // Exibe o modal
+        }
+
+        document.getElementById('closeModal').onclick = function() {
+            document.getElementById('confirmationModal').style.display = 'none'; // Fecha o modal
+        }
+
+        document.getElementById('cancelDelete').onclick = function() {
+            document.getElementById('confirmationModal').style.display = 'none'; // Fecha o modal
+        }
+
+        document.getElementById('confirmDelete').onclick = function() {
+            excluirViajante(idToDelete);
+            document.getElementById('confirmationModal').style.display = 'none'; // Fecha o modal
+        }
+
+        function excluirViajante(id) {
+            // Adicione a lógica para excluir o viajante
+            console.log(`Viajante com ID: ${id} excluído.`);
+        }
+
+        // Fecha o modal se o usuário clicar fora dele
+        window.onclick = function(event) {
+            const modal = document.getElementById('confirmationModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        fetchViajantes();
+    </script>
+
+</body>
+</html>
+
