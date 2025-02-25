@@ -23,10 +23,6 @@ const Navbar = () => {
         <NavLink to="/about">
         <button className="right-button">Entrar em contato</button>
         </NavLink>
-     
-
-     
-  
     </nav>
   );
 };

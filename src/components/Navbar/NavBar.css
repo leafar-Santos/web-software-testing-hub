@@ -55,3 +55,34 @@
   background-color:  #356479;
   color: white;
 }
+
+
+@media (max-width: 412px) {
+  .navbar {
+    display: none; /* Oculta o menu para telas menores que 412px */
+  }
+
+  .right-button {
+    width: 100%; /* O botão ocupa toda a largura em telas menores */
+    text-align: center;
+    font-size: 16px;
+    padding: 10px;
+    margin-top: 10px;
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: 430px) {
+  .navbar {
+    display: none; /* Oculta o menu para telas menores que 412px */
+  }
+
+  .right-button {
+    width: 100%; /* O botão ocupa toda a largura em telas menores */
+    text-align: center;
+    font-size: 16px;
+    padding: 10px;
+    margin-top: 10px;
+    box-sizing: border-box;
+  }
+}
