@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/web-software-testing-hub/static/css/main.be6bbf3f.css",
-    "main.js": "/web-software-testing-hub/static/js/main.8cb71827.js",
+    "main.js": "/web-software-testing-hub/static/js/main.eabd296f.js",
     "static/js/453.483dd113.chunk.js": "/web-software-testing-hub/static/js/453.483dd113.chunk.js",
     "static/media/BACK_HOME.png": "/web-software-testing-hub/static/media/BACK_HOME.5c28499548de164d3ee7.png",
     "static/media/LoginImage.png": "/web-software-testing-hub/static/media/LoginImage.2bc064a07aea5216919e.png",
@@ -12,11 +12,11 @@
     "static/media/slick.woff": "/web-software-testing-hub/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/web-software-testing-hub/index.html",
     "main.be6bbf3f.css.map": "/web-software-testing-hub/static/css/main.be6bbf3f.css.map",
-    "main.8cb71827.js.map": "/web-software-testing-hub/static/js/main.8cb71827.js.map",
+    "main.eabd296f.js.map": "/web-software-testing-hub/static/js/main.eabd296f.js.map",
     "453.483dd113.chunk.js.map": "/web-software-testing-hub/static/js/453.483dd113.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.be6bbf3f.css",
-    "static/js/main.8cb71827.js"
+    "static/js/main.eabd296f.js"
   ]
 }
