@@ -5,10 +5,8 @@ import CarouselHome from '../../components/Carousel/CarouselHome';
 
 import './Home.css';
 
-import BackHome from "../../assets/BACK_HOME.png"
-import Cadastro from "../../assets/Cadastro.png"
-import LoginImage from "../../assets/LoginImage.png"
-
+import Cadastro from "../../assets/home_images/Cadastro.png"
+import LoginImage from "../../assets/home_images/LoginImage.png"
 
 
 const Home = () => {
@@ -26,25 +24,21 @@ const Home = () => {
         </div>
       </section>
 
-   
-
-      
       {/* Seção de Cards */}
       <section className="cards-section">
         <div className="card">
           <h3 className="card-title">Formulário de cadastro</h3>
-          <img 
-            src={LoginImage}
+          <img src={LoginImage}
             alt="Imagem do Card" 
             className="card-image"
-          />
+            />
+
           <NavLink to="/viajante">
             <button className="access-button">
               Acessar
             </button>
           </NavLink>
         </div>
-
 
         <div className="card">
           <h3 className="card-title">Formulário de cadastro</h3>

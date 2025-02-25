@@ -1,6 +1,6 @@
 import './App.css';
 
-
+import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate} from 'react-router-dom';
 
 
@@ -25,7 +25,7 @@ function App() {
       <div className='container'>
       
         <Routes>
-          <Route path='/' element={<Home/>}></Route>
+          <Route path='/web-software-testing-hub' element={<Home/>}></Route>
           <Route path='/about' element={<About/>}></Route>
           <Route path='/viajante' element={<Viajante/>}></Route>
          

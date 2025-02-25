@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 
 import "./Carousel.css"
-import BackHome from "../../assets/BACK_HOME.png"
+import BackHome from "../../assets/Carousel_images/BACK_HOME.png"
 
 const Carrossel = () => {
   const settings = {
