@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/leafar-Santos/web-software-testing-hub/static/css/main.25a313c9.css",
+    "main.js": "/leafar-Santos/web-software-testing-hub/static/js/main.39a23fe6.js",
+    "static/js/453.483dd113.chunk.js": "/leafar-Santos/web-software-testing-hub/static/js/453.483dd113.chunk.js",
+    "static/media/BACK_HOME.png": "/leafar-Santos/web-software-testing-hub/static/media/BACK_HOME.5c28499548de164d3ee7.png",
+    "static/media/LoginImage.png": "/leafar-Santos/web-software-testing-hub/static/media/LoginImage.2bc064a07aea5216919e.png",
+    "static/media/Cadastro.png": "/leafar-Santos/web-software-testing-hub/static/media/Cadastro.a89729e868ef17515804.png",
+    "static/media/slick.svg": "/leafar-Santos/web-software-testing-hub/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/leafar-Santos/web-software-testing-hub/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/leafar-Santos/web-software-testing-hub/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/leafar-Santos/web-software-testing-hub/static/media/slick.295183786cd8a1389865.woff",
+    "index.html": "/leafar-Santos/web-software-testing-hub/index.html",
+    "main.25a313c9.css.map": "/leafar-Santos/web-software-testing-hub/static/css/main.25a313c9.css.map",
+    "main.39a23fe6.js.map": "/leafar-Santos/web-software-testing-hub/static/js/main.39a23fe6.js.map",
+    "453.483dd113.chunk.js.map": "/leafar-Santos/web-software-testing-hub/static/js/453.483dd113.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.25a313c9.css",
+    "static/js/main.39a23fe6.js"
+  ]
+}
